@@ -1,10 +1,11 @@
 package main
 
 import (
-	"github.com/anderslundholm/go_playground/redis_cache/models"
 	"fmt"
 	"log"
 	"net/http"
+
+	"github.com/anderslundholm/go_playground/redis_cache/models"
 )
 
 func main() {

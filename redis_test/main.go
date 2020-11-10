@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"github.com/anderslundholm/go_playground/redis_test/models"
 	"strconv"
+
+	"github.com/anderslundholm/go_playground/redis_test/models"
 )
 
 func main() {
@@ -30,7 +31,7 @@ func showAlbum(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, http.StatusText(400), 400)
 		return
 	}
-	
+
 	if _, err := strconv.Atoi(id); err != nil {
 		http.Error(w, http.StatusText(400), 400)
 		return
@@ -46,8 +47,7 @@ func showAlbum(w http.ResponseWriter, r *http.Request) {
 	}
 
 	fmt.Fprintf(w, "%s by %s: $%.2f [%d likes] \n",
-				bk.Title, bk.Artist, bk.Price, bk.Likes)
+		bk.Title, bk.Artist, bk.Price, bk.Likes)
 	fmt.Printf("%s by %s: $%.2f [%d likes] \n",
-				bk.Title, bk.Artist, bk.Price, bk.Likes)
+		bk.Title, bk.Artist, bk.Price, bk.Likes)
 }
-
